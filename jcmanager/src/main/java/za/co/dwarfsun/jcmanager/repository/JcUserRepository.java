@@ -6,11 +6,11 @@
 package za.co.dwarfsun.jcmanager.repository;
 
 import za.co.dwarfsun.jcmanager.domain.JcUser;
-//import org.springframework.data.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 /**
  *
  * @author Matt
  */
-public interface JcUserRepository {// extends JpaRepository <JcUser, Long>{
+public interface JcUserRepository  extends JpaRepository<JcUser, Long>{
     
 }
