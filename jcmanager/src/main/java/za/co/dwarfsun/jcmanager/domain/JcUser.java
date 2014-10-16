@@ -39,6 +39,10 @@ public class JcUser implements Serializable {
         private String userName;
         private String password;
         
+        public Builder(String userName){
+            this.userName = userName;
+        }
+        
         public Builder id(Long value){
             this.id = value;
             return this;
@@ -51,7 +55,7 @@ public class JcUser implements Serializable {
             this.password = value;
             return this;
         }
-        public Builder User(JcUser value){
+        public Builder jcUser(JcUser value){
             id = value.getId();
             userName = value.getUserName();
             password = value.getPassword();
