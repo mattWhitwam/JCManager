@@ -25,18 +25,21 @@ public class JobData implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
-    @JoinColumn(name="attributeID")
-    private Attribute attribute;
+    @JoinColumn(name="attribID")
+    private Attrib attrib;
     
     private String val;
 
     public JobData(){
     }
     public JobData(Builder builder){
+        id = builder.id;
+        attrib = builder.attrib;
+        val = builder.val;
     }
     public static class Builder {
         private Long id;
-        private Attribute attribute;
+        private Attrib attrib;
         private String val;
         public Builder(String val){
             this.val = val;
@@ -45,14 +48,18 @@ public class JobData implements Serializable {
             this.id=value;
             return this;
         }
-        public Builder attribute(Attribute value){
-            this.attribute = value;
+        public Builder val(String v){
+            this.val = v;
             return this;
         }
-        public Builder JobData(JobData value){
+        public Builder attrib(Attrib value){
+            this.attrib = value;
+            return this;
+        }
+        public Builder jobData(JobData value){
             this.id = value.id;
             this.val = value.val;
-            this.attribute = value.attribute;
+            this.attrib = value.attrib;
             return this;
         }
         public JobData build(){
@@ -76,12 +83,12 @@ public class JobData implements Serializable {
         this.val = val;
     }
 
-    public Attribute getAttribute() {
-        return attribute;
+    public Attrib getAttribute() {
+        return attrib;
     }
 
-    public void setAttribute(Attribute attribute) {
-        this.attribute = attribute;
+    public void setAttribute(Attrib attrib) {
+        this.attrib = attrib;
     }
 
     @Override

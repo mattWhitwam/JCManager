@@ -5,12 +5,12 @@
  */
 package za.co.dwarfsun.jcmanager.repository;
 
-import za.co.dwarfsun.jcmanager.domain.Role;
+import za.co.dwarfsun.jcmanager.domain.Site;
 import org.springframework.data.jpa.repository.JpaRepository;
 /**
  *
  * @author Matt
  */
-public interface RoleRepository  extends JpaRepository<Role, Long>{
+public interface SiteRepository  extends JpaRepository<Site, Long>{
     
 }

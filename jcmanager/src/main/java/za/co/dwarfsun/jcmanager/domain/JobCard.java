@@ -50,11 +50,15 @@ public class JobCard implements Serializable {
                 this.id = value;
                 return this;
             }
+            public Builder name(String v){
+                this.name = v;
+                return this;
+            }
             public Builder jobCardAttributes(List<JobCardAttribute> value){
                 this.jobCardAttributes = value;
                 return this;
             }
-            public Builder JobCard(JobCard value){
+            public Builder jobCard(JobCard value){
                 this.id = value.id;
                 this.name = value.name;
                 this.jobCardAttributes = value.jobCardAttributes;

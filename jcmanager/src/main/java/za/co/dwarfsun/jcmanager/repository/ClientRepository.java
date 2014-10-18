@@ -5,12 +5,12 @@
  */
 package za.co.dwarfsun.jcmanager.repository;
 
-import za.co.dwarfsun.jcmanager.domain.Job;
+import za.co.dwarfsun.jcmanager.domain.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 /**
  *
  * @author Matt
  */
-public interface JobRepository  extends JpaRepository<Job, Long>{
+public interface ClientRepository  extends JpaRepository<Client, Long>{
     
 }

@@ -36,6 +36,10 @@ public class JobAttachment implements Serializable {
         private Long id;
         private String filePath;
         
+        public Builder(String filePath){
+            this.filePath = filePath;
+        }
+        
         public Builder id(Long value){
             this.id = value;
             return this;

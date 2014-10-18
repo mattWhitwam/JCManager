@@ -17,23 +17,26 @@ import javax.persistence.Id;
  * @author Matthew
  */
 @Entity
-public class Job implements Serializable {
+public class JobInfo implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String info;
     private String status;
-    private Boolean complete;
+    private Integer complete;
 
-    public Job(){
+    public JobInfo(){
     }
     
-    public Job(Builder builder) {
+    public JobInfo(Builder builder) {
         id = builder.id;
         info = builder.info;
         status = builder.status;
-        complete = builder.complete;
+        if (builder.complete)
+            complete = 1;
+        else
+            complete = 0;
     }
     
     public static class Builder {    
@@ -41,6 +44,10 @@ public class Job implements Serializable {
         private String info;
         private String status;
         private Boolean complete;
+        
+        public Builder(String info) {
+            this.info = info;
+        }
     
         public Builder id(Long value){
             this.id = value;
@@ -62,15 +69,15 @@ public class Job implements Serializable {
             return this;
         }
         
-        public Builder Job(Job value){
+        public Builder jobInfo(JobInfo value){
             id = value.getId();
             info = value.getInfo();
             status = value.getStatus();
             complete = value.isComplete();
             return this;
         }
-        public Job build(){
-            return new Job(this);
+        public JobInfo build(){
+            return new JobInfo(this);
         }
     }
     
@@ -91,11 +98,14 @@ public class Job implements Serializable {
     }
 
     public Boolean isComplete() {
-        return complete;
+        return (complete == 1);
     }
 
     public void setComplete(Boolean complete) {
-        this.complete = complete;
+        if (complete)
+            this.complete = 1;
+        else
+            this.complete = 0;
     }
 
     public Long getId() {
@@ -116,10 +126,10 @@ public class Job implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Job)) {
+        if (!(object instanceof JobInfo)) {
             return false;
         }
-        Job other = (Job) object;
+        JobInfo other = (JobInfo) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

@@ -20,40 +20,43 @@ import javax.persistence.OneToMany;
  * @author Matthew
  */
 @Entity
-public class Attribute implements Serializable {
+public class Attrib implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
     private String description;
-    private String tableName;
-    private String field;
-    private Boolean iskey;
+    private String tblName;
+    private String fldName;
+    private Integer isakey;
     
-    @OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
+    @OneToMany//(orphanRemoval=true, cascade= CascadeType.ALL)
     private List<JobCardAttribute> jobCardAttributes;
 
-    @OneToMany(orphanRemoval=true, cascade= CascadeType.ALL)
+    @OneToMany//(orphanRemoval=true, cascade= CascadeType.ALL)
     private List<JobData> jobData;
 
-    public Attribute() {
+    public Attrib() {
     }
     
-    public Attribute(Builder builder) {
+    public Attrib(Builder builder) {
         id = builder.id;
         description = builder.description;
-        tableName = builder.tableName;
-        field = builder.field;
-        iskey = builder.iskey;
+        tblName = builder.tblName;
+        fldName = builder.fldName;
+        if (builder.isakey)
+            isakey = 1;
+        else
+            isakey = 0;
     }
 
     public static class Builder {    
         private Long id;
         private String description;
-        private String tableName;
-        private String field;
-        private Boolean iskey;
+        private String tblName;
+        private String fldName;
+        private Boolean isakey;
         
         public Builder(String description){
             this.description = description;
@@ -62,28 +65,36 @@ public class Attribute implements Serializable {
             this.id = value;
             return this;
         }
-        public Builder tableName(String value){
-            this.tableName = value;
+        public Builder tblName(String value){
+            this.tblName = value;
             return this;
         }
-        public Builder field(String value){
-            this.field = value;
+        public Builder fldName(String value){
+            this.fldName = value;
             return this;
         }
-        public Builder iskey(Boolean value){
-            this.iskey = value;
+        public Builder isakey(Boolean value){
+/*            if (value)
+                this.isakey = 1;
+            else
+                this.isakey = 0;*/
+            this.isakey = value;
             return this;
         }
-        public Builder Attribute(Attribute value){
+        public Builder description(String v){
+            this.description = v;
+            return this;
+        }
+        public Builder attrib(Attrib value){
             id = value.getId();
             description = value.getDescription();
-            tableName = value.getTableName();
-            field = value.getField();
-            iskey = value.getIskey();
+            tblName = value.getTableName();
+            fldName = value.getField();
+            isakey = value.getIskey();
             return this;
         }
-        public Attribute build(){
-            return new Attribute(this);
+        public Attrib build(){
+            return new Attrib(this);
         }
     }
     
@@ -104,27 +115,31 @@ public class Attribute implements Serializable {
     }
 
     public String getTableName() {
-        return tableName;
+        return tblName;
     }
 
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
+    public void setTableName(String tblName) {
+        this.tblName = tblName;
     }
 
     public String getField() {
-        return field;
+        return fldName;
     }
 
-    public void setField(String field) {
-        this.field = field;
+    public void setField(String fldName) {
+        this.fldName = fldName;
     }
 
     public Boolean getIskey() {
-        return iskey;
+        return (isakey == 1);
     }
 
-    public void setIskey(Boolean iskey) {
-        this.iskey = iskey;
+    public void setIskey(Boolean isakey) {
+        //this.isakey = isakey;
+        if (isakey)
+            this.isakey = 1;
+        else
+            this.isakey = 0;
     }
 
     public List<JobCardAttribute> getJobCardAttributes() {
@@ -152,11 +167,11 @@ public class Attribute implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Attribute)) {
+        // TODO: Warning - this method won't work in the case the id fldNames are not set
+        if (!(object instanceof Attrib)) {
             return false;
         }
-        Attribute other = (Attribute) object;
+        Attrib other = (Attrib) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

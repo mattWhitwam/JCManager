@@ -27,8 +27,8 @@ public class JobCardAttribute implements Serializable {
     
     private int lineNum;
     @ManyToOne
-    @JoinColumn(name="AttributeId")
-    private Attribute attribute;
+    @JoinColumn(name="AttribId")
+    private Attrib attrib;
 
     @ManyToOne
     @JoinColumn(name="JobCardId")
@@ -39,15 +39,16 @@ public class JobCardAttribute implements Serializable {
     public JobCardAttribute(Builder builder){
         id = builder.id;
         lineNum = builder.lineNum;
-        attribute = builder.attribute;
+        attrib = builder.attrib;
         jobCard = builder.jobCard;
     }
 
     public static class Builder {
         private Long id;
         private int lineNum;
-        private Attribute attribute;
+        private Attrib attrib;
         private JobCard jobCard;
+        
         public Builder(int lineNum){
             this.lineNum = lineNum;
         }
@@ -55,18 +56,22 @@ public class JobCardAttribute implements Serializable {
             this.id = value;
             return this;
         }
-        public Builder attribute(Attribute value){
-            this.attribute = value;
+        public Builder lineNum(int v){
+            this.lineNum = v;
+            return this;
+        }
+        public Builder attrib(Attrib value){
+            this.attrib = value;
             return this;
         }
         public Builder jobCard(JobCard value){
             this.jobCard = value;
             return this;
         }
-        public Builder JobCardAttribute(JobCardAttribute value){
+        public Builder jobCardAttribute(JobCardAttribute value){
             this.id = value.id;
             this.lineNum = value.lineNum;
-            this.attribute = value.attribute;
+            this.attrib = value.attrib;
             this.jobCard = value.jobCard;
             return this;
         }
@@ -91,12 +96,12 @@ public class JobCardAttribute implements Serializable {
         this.lineNum = lineNum;
     }
 
-    public Attribute getAttribute() {
-        return attribute;
+    public Attrib getAttrib() {
+        return attrib;
     }
 
-    public void setAttribute(Attribute attribute) {
-        this.attribute = attribute;
+    public void setAttrib(Attrib attrib) {
+        this.attrib = attrib;
     }
 
     public JobCard getJobCard() {

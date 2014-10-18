@@ -17,17 +17,17 @@ import javax.persistence.Id;
  * @author Matthew
  */
 @Entity
-public class Role implements Serializable {
+public class JcRole implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String description;
     
-    public Role(){
+    public JcRole(){
     }
     
-    public Role(Builder builder) {
+    public JcRole(Builder builder) {
         id = builder.id;
         description = builder.description;
     }
@@ -35,6 +35,10 @@ public class Role implements Serializable {
     public static class Builder {    
         private Long id;
         private String description;
+        
+        public Builder(String description){
+            this.description = description;
+        }
         
         public Builder id(Long value){
             this.id = value;
@@ -46,13 +50,13 @@ public class Role implements Serializable {
             return this;
         }
         
-        public Builder Role(Role value){
+        public Builder jcRole(JcRole value){
             id = value.getId();
             description = value.getDescription();
             return this;
         }
-        public Role build(){
-            return new Role(this);
+        public JcRole build(){
+            return new JcRole(this);
         }
     }
     
@@ -82,10 +86,10 @@ public class Role implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Role)) {
+        if (!(object instanceof JcRole)) {
             return false;
         }
-        Role other = (Role) object;
+        JcRole other = (JcRole) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

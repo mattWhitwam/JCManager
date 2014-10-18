@@ -29,7 +29,7 @@ public class Site implements Serializable {
     
     @OneToMany
     @JoinColumn(name="jobId")
-    private List<Job> job;
+    private List<JobInfo> job;
 
     public Site() {
     }
@@ -45,7 +45,7 @@ public class Site implements Serializable {
         private Long id;
         private String name;
         private String address;
-        private List<Job> job;
+        private List<JobInfo> job;
         
         public Builder(String name){
             this.name = name;
@@ -62,7 +62,7 @@ public class Site implements Serializable {
             this.address = v;
             return this;
         }
-        public Builder job(List<Job> v){
+        public Builder job(List<JobInfo> v){
             this.job = v;
             return this;
         }
@@ -78,11 +78,11 @@ public class Site implements Serializable {
         }
     }
 
-    public List<Job> getJob() {
+    public List<JobInfo> getJob() {
         return job;
     }
 
-    public void setJob(List<Job> job) {
+    public void setJob(List<JobInfo> job) {
         this.job = job;
     }
     
