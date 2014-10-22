@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import org.springframework.hateoas.ResourceSupport;
 /**
  *
  * @author Matthew
@@ -65,7 +65,7 @@ public class JcUser implements Serializable {
             return new JcUser(this);
         }
     }
-
+ 
     public Long getId() {
         return id;
     }
