@@ -25,12 +25,12 @@ public class HomeController {
 
     @RequestMapping(value = "/x",method = RequestMethod.GET)
     public String x(Model model){
-        model.addAttribute("x", "This is X");
+        model.addAttribute("value", "This is <b>X</b>");
         return "index";
     }
     @RequestMapping(value = "/y",method = RequestMethod.GET)
     public String y(Model model){
-        model.addAttribute("y", "This is Y");
+        model.addAttribute("value", "This is <b>Y</b>");
         return "index";
     }
     
