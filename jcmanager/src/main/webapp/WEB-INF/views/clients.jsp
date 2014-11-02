@@ -16,7 +16,9 @@
     </head>
     <body>
         <%@include file="/resources/includes/headerbar.html" %>
-        <h1>Clients:</h1>
-        
+        <%@include file="/WEB-INF/jspf/mainMenu.jspf" %>
+        <div class="usableArea">
+            This is a page for stuff related to clients...
+        </div>
     </body>
 </html>

@@ -9,11 +9,11 @@ and open the template in the editor.
 */
 
 body {
-    background: navajowhite;
+    background: ghostwhite;
     font-family: arial, sans-serif;
     
     font-size: medium;
-    color: midnightblue;
+    color: black;
 }
 
 h1 {
@@ -30,6 +30,7 @@ h1 {
 #siteheader {
     background: black;
     color: ghostwhite;
+    margin: 0 0 0 0;
     padding-top: 0em;
     padding-left: 0.5em;
     position: fixed;
@@ -55,6 +56,7 @@ h1 {
 }
 #sitemainmenu a {
     text-decoration: none;
+    color: ghostwhite;
 }
 #sitemainmenu a div {
     border-style: solid;
@@ -66,4 +68,8 @@ h1 {
     margin-bottom: 1px;
     padding-left: 0.25em;
     width: calc(100% - 0.75em);
+}
+#sitemainmenu a div:hover {
+    background: darkgrey;
+    border-color: lightgray;
 }

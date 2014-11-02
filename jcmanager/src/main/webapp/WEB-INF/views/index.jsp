@@ -28,7 +28,7 @@
                     Click here for Y
                 </a>
             </div>
+            <div>${value}</div>
         </div>
-        <div>${value}</div>
     </body>
 </html>
