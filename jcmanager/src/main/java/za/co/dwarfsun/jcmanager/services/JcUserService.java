@@ -12,5 +12,5 @@ import za.co.dwarfsun.jcmanager.domain.JcUser;
  * @author Matthew
  */
 public interface JcUserService extends Services<JcUser, Long>{
-    
+        
 }

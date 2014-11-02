@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02 Nov 2014, 8:06:07 PM
+    Author     : Matt
+*/
+
+body {
+    background: navajowhite;
+    font-family: arial, sans-serif;
+    
+    font-size: medium;
+    color: midnightblue;
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight:  bold;
+    font-variant-caps: small-caps;
+}
+
+.usableArea {
+    margin-top: 4em;
+    margin-left: 10em;
+}
+
+#siteheader {
+    background: black;
+    color: ghostwhite;
+    padding-top: 0em;
+    padding-left: 0.5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: calc(100% - 4em);
+}
+#siteheaderspace {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    height: 5em;
+}
+
+#sitemainmenu {
+    background: black;
+    color: ghostwhite;
+    position: fixed;
+    top: 4em;
+    left: 0;
+    bottom: 100%;
+    width: 10em;
+    
+}

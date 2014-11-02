@@ -29,12 +29,22 @@ public class ContactPerson extends Person implements Serializable{
     public ContactPerson(Builder builder) {
         id = builder.id;
         description = builder.description;
+        setTitle(builder.title);
+        setFirstname(builder.firstname);
+        setLastname(builder.lastname);
+        setEmail(builder.email);
+        setPhone(builder.phone);
     }
     
     public static class Builder {
         private Long id;
         private String description;
-
+        private String title;
+        private String firstname;
+        private String lastname;
+        private String email;
+        private String phone;
+        
         public Builder(String description) {
             this.description = description;
         }
@@ -46,16 +56,42 @@ public class ContactPerson extends Person implements Serializable{
             this.description = value;
             return this;
         }
+        public Builder title(String value){
+            this.title = value;
+            return this;
+        }
+        public Builder firstname(String v){
+            this.firstname = v;
+            return this;
+        }
+        public Builder lastname(String v){
+            this.lastname = v;
+            return this;
+        }
+        public Builder email(String v){
+            this.email = v;
+            return this;
+        }
+        public Builder phone(String v){
+            this.phone = v;
+            return this;
+        }
+        public Builder person (Person value){
+            this.title = value.getTitle();
+            this.firstname = value.getFirstname();
+            this.lastname = value.getLastname();
+            this.email = value.getEmail();
+            this.phone = value.getPhone();
+            return this;
+        }
         public Builder contactPerson(ContactPerson value){
             id = value.id;
             description = value.description;
-/*
-            title = value.title;
-            firstname = value.firstname;
-            lastname = value.lastname;
-            email = value.email;
-            phone = value.phone;
-*/
+            title = value.getTitle();
+            firstname = value.getFirstname();
+            lastname = value.getLastname();
+            email = value.getEmail();
+            phone = value.getPhone();
             return this;
         }
         public ContactPerson build(){
@@ -63,7 +99,6 @@ public class ContactPerson extends Person implements Serializable{
         }
     }
     
-
     public String getDescription() {
         return description;
     }
@@ -75,10 +110,6 @@ public class ContactPerson extends Person implements Serializable{
     public Long getId() {
         return id;
     }
-
-    /*public void setId(Long id) {
-        this.id = id;
-    }*/
 
     @Override
     public int hashCode() {
