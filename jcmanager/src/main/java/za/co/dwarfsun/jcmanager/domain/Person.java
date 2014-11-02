@@ -10,7 +10,7 @@ package za.co.dwarfsun.jcmanager.domain;
  *
  * @author Connie
  */
-public class Person {
+public abstract class Person {
     private String title;
     private String firstname;
     private String lastname;
