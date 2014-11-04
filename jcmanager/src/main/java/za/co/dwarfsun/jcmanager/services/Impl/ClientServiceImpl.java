@@ -20,34 +20,34 @@ import za.co.dwarfsun.jcmanager.services.ClientService;
 @Service
 public class ClientServiceImpl implements ClientService {
     @Autowired
-    private ClientRepository jlientRepository;
+    private ClientRepository clientRepository;
 
     @Override
     public Client find(Long id) {
-        return jlientRepository.findOne(id);
+        return clientRepository.findOne(id);
     }
 
     @Override
     public Client persist(Client entity) {
-        return jlientRepository.save(entity);
+        return clientRepository.save(entity);
     }
 
     @Override
     public Client merge(Client entity) {
         if(entity.getId()!=null) {
-            return jlientRepository.save(entity);
+            return clientRepository.save(entity);
         }
         return null;
     }
 
     @Override
     public void remove(Client entity) {
-        jlientRepository.delete(entity);
+        clientRepository.delete(entity);
     }
 
     @Override
     public List<Client> findAll() {
-        return jlientRepository.findAll();
+        return clientRepository.findAll();
     }
     
     

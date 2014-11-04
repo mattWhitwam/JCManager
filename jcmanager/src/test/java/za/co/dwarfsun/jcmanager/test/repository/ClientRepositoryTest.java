@@ -7,6 +7,8 @@
 package za.co.dwarfsun.jcmanager.test.repository;
 
 //import junit.framework.Assert;
+import java.util.Arrays;
+import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
@@ -17,6 +19,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import za.co.dwarfsun.jcmanager.domain.Client;
+import za.co.dwarfsun.jcmanager.domain.Site;
 import za.co.dwarfsun.jcmanager.repository.ClientRepository;
 import za.co.dwarfsun.jcmanager.test.ConnectionConfigTest;
 

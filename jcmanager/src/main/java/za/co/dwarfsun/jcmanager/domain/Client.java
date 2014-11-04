@@ -9,6 +9,7 @@ package za.co.dwarfsun.jcmanager.domain;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,13 +28,13 @@ public class Client implements Serializable {
     private Long id;
     private String name;
     
-    @OneToMany
-    @JoinColumn(name="contactPersonId")
-    private List<ContactPerson> contactPerson;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="ClientId")
+    private List<ContactPerson> contactPersons;
     
-    @OneToMany
-    @JoinColumn(name="siteId")
-    private List<Site> site;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="ClientId")
+    private List<Site> sites;
 
     public Client() {
     }
@@ -42,15 +43,15 @@ public class Client implements Serializable {
     public Client(Builder builder) {
         id = builder.id;
         name = builder.name;
-        contactPerson = builder.contactPerson;
-        site = builder.site;
+        contactPersons = builder.contactPersons;
+        sites = builder.sites;
     }
     
     public static class Builder {
         private Long id;
         private String name;
-        private List<ContactPerson> contactPerson;
-        private List<Site> site;
+        private List<ContactPerson> contactPersons;
+        private List<Site> sites;
 
         public Builder(String name) {
             this.name = name;
@@ -65,18 +66,18 @@ public class Client implements Serializable {
             return this;
         }
         public Builder contactPerson(List<ContactPerson> value) {
-            this.contactPerson = value;
+            this.contactPersons = value;
             return this;
         }
         public Builder site(List<Site> value) {
-            this.site = value;
+            this.sites = value;
             return this;
         }
         public Builder client(Client value){
             id = value.getId();
             name = value.getName();
-            contactPerson = value.getContactPerson();
-            site = value.getSite();
+            contactPersons = value.getContactPersons();
+            sites = value.getSites();
             return this;
         }
         public Client build(){
@@ -96,20 +97,20 @@ public class Client implements Serializable {
         this.name = name;
     }
 
-    public List<ContactPerson> getContactPerson() {
-        return contactPerson;
+    public List<ContactPerson> getContactPersons() {
+        return contactPersons;
     }
 
-    public void setContactPerson(List<ContactPerson> contactPerson) {
-        this.contactPerson = contactPerson;
+    public void setContactPersons(List<ContactPerson> contactPersons) {
+        this.contactPersons = contactPersons;
     }
 
-    public List<Site> getSite() {
-        return site;
+    public List<Site> getSites() {
+        return sites;
     }
 
-    public void setSite(List<Site> site) {
-        this.site = site;
+    public void setSites(List<Site> sites) {
+        this.sites = sites;
     }
 
 

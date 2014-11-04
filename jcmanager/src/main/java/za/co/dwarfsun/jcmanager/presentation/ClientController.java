@@ -12,7 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
 import za.co.dwarfsun.jcmanager.domain.Client;
+import za.co.dwarfsun.jcmanager.domain.Site;
 import za.co.dwarfsun.jcmanager.services.ClientService;
+import za.co.dwarfsun.jcmanager.services.SiteService;
 /**
  *
  * @author Matt
@@ -21,18 +23,21 @@ import za.co.dwarfsun.jcmanager.services.ClientService;
 public class ClientController {
     @Autowired
     private ClientService clientService;
+    @Autowired
+    private SiteService siteService;
     
     @RequestMapping(value="clients")
     public String clients(Model model){
         List<Client> clients = clientService.findAll();
-        
-        String template = "<form action=\"clients/edit\" method=\"POST\" class=\"listed\"><input readonly type=\"text\" name=\"clientId\" value=\" %s \"/><input readonly type=\"text\" name=\"clientName\" value=\" %s \"/><input type=\"submit\" value=\"Manage\"/></form>";
+        model.addAttribute("numClients", clients.size());
+        String template = "<form action=\"clients/edit\" method=\"POST\" class=\"listed\"><input readonly type=\"text\" name=\"clientId\" value=\" %s \"/><input readonly type=\"text\" name=\"clientName\" value=\" %s \"/><input type=\"submit\" value=\"Manage\"/> %s sites; %s contacts; </form>";
         String clientsAsHTML = "";
         for (Client client : clients) {
-            clientsAsHTML += String.format(template, client.getId(), client.getName()) ;
+            int t = client.getSites().size();
+            clientsAsHTML += String.format(template, client.getId(), client.getName(), client.getSites().size(), client.getContactPersons().size() );
         }
         model.addAttribute("clientsAsHTML", clientsAsHTML);
-        model.addAttribute("numClients", clients.size());
+        
         return "clients";
     }
     
@@ -57,7 +62,13 @@ public class ClientController {
         }
         else {
             Client client = clientService.find(clientId);
-            clientName = client.getName();
+            if (clientName != null && !clientName.isEmpty()) {
+                client.setName(clientName);
+            }
+            else {
+                clientName = client.getName();
+            }
+            clientService.persist(client);
         }
         model.addAttribute("clientId", clientId);
         model.addAttribute("clientName", clientName);
