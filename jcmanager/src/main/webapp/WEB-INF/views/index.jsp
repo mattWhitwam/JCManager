@@ -18,19 +18,6 @@
         <%@include file="/resources/includes/headerbar.html" %>
         <%@include file="/WEB-INF/jspf/mainMenu.jspf" %>
         <div class="usableArea">
-            Hello World:
-            <input type="text" name="firstname"><br>
-            <div>
-                <p>Here's some stuff for trying it all out though:</p>
-                <a href="./x">
-                    Click here for X
-                </a>
-                <br />
-                <a href="./y">
-                    Click here for Y
-                </a>
-            </div>
-            <div>${value}</div>
         </div>
     </body>
 </html>
