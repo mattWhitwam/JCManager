@@ -4,6 +4,8 @@
     Author     : Matt
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="za.co.dwarfsun.jcmanager.domain.Client"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +20,8 @@
         <%@include file="/resources/includes/headerbar.html" %>
         <%@include file="/WEB-INF/jspf/mainMenu.jspf" %>
         <div class="usableArea">
-            This is a page for stuff related to clients...
+            You have ${numClients} clients.
+            ${clientsAsHTML}
         </div>
     </body>
 </html>

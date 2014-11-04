@@ -8,6 +8,7 @@ package za.co.dwarfsun.jcmanager.services.Impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import za.co.dwarfsun.jcmanager.domain.JcUser;
 import za.co.dwarfsun.jcmanager.repository.JcUserRepository;
 import za.co.dwarfsun.jcmanager.services.JcUserService;
@@ -16,6 +17,7 @@ import za.co.dwarfsun.jcmanager.services.JcUserService;
  *
  * @author Matthew
  */
+@Service
 public class JcUserServiceImpl implements JcUserService {
     @Autowired
     private JcUserRepository jcUserRepository;

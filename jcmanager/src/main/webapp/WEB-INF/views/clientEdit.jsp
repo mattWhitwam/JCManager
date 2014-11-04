@@ -19,7 +19,7 @@
         <%@include file="/WEB-INF/jspf/mainMenu.jspf" %>
         <div class="usableArea">
             <form id="clientEdit" action="edit" method="POST">
-                Client ID: <input readonly type="text" name="clientId" value="${clientID}"/><br/>
+                Client ID: <input readonly type="text" name="clientId" value="${clientId}"/><br/>
                 Client Name: <input type ="text" name="clientName" value="${clientName}"/><br/>
                 <br/>
                 <input type="submit" value="Save"/>

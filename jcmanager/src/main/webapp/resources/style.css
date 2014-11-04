@@ -11,7 +11,6 @@ and open the template in the editor.
 body {
     background: ghostwhite;
     font-family: arial, sans-serif;
-    
     font-size: medium;
     color: black;
 }
@@ -65,38 +64,24 @@ form {
     border-top-width: 1px;
     border-top-left-radius: 0;
 }
-.menuSegment div {
-    border-style: solid;
-    border-color: ghostwhite;
-    border-width: 1px;
-    margin-left: 0.25em;
-    margin-right: 0.25em;
-    margin-bottom: 1px;
-    padding-left: 0.25em;
-    width: calc(100% - 0.75em);
-}
-.menuSegment div:first-of-type{
-    border-top-left-radius: 0.5em; 
-}
-.menuSegment div:last-of-type {
-    border-bottom-left-radius: 0.5em;
-}
-.menuSegment div:hover{
-    background: lightgray;
-    border-color: darkgray;
-    color: black;
-    padding-left: 0.5em;
-    margin-left: 0em;
-    width: calc(100% - 0.75em);
-    cursor: pointer;
+
+#circlebutton {
+    border-radius: 3em;
+    border-width: 0.2em;
+    margin: 0em;
+    padding: 0em;
+    width: 3.5em;
+    height: 3.5em;
+    text-align: center;
 }
 
-.menuSegment button {
+.sitemainmenu button {
     background: none;
     border-style: solid;
     border-color: ghostwhite;
     border-width: 1px;
     color: ghostwhite;
+    font-size: medium;
     margin-left: 0.25em;
     margin-right: 0.25em;
     margin-bottom: 1px;
@@ -104,20 +89,19 @@ form {
     text-align: left;
     width: calc(100% - 0.5em);
 }
-.menuSegment button:first-of-type{
+.sitemainmenu button:first-of-type{
     border-top-left-radius: 0.5em; 
 }
-.menuSegment button:last-of-type {
+.sitemainmenu button:last-of-type {
     border-bottom-left-radius: 0.5em;
 }
-.menuSegment button:hover{
+.sitemainmenu button:hover{
     background: lightgray;
     border-color: darkgray;
     color: black;
     padding-left: 0.5em;
     margin-left: 0em;
     width: calc(100% - 0.25em);
-    
 }
 
 #clientEdit {
@@ -135,5 +119,4 @@ input:read-only {
     background: lightgray;
     border: lightgray;
     font-weight: bold;
-    
 }
