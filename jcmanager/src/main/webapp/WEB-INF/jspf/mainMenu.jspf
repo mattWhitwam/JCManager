@@ -2,26 +2,29 @@
 <%@ page pageEncoding="UTF-8" %>
 <div class="sitemainmenu">
     
-    <a href="/jcmanager/"><div>Home</div></a>
-
-    <div>
+    <div class="menuSegment">
+    <button onclick="location.href='/jcmanager/'">Home</button>
+    </div>
+    
+    <div class="menuSegment">
         Clients <br/>
-        <a href="/jcmanager/clients/edit"><div>Client Management</div></a>
-        <a href="/jcmanager/clients"><div>Site Management</div></a>
+        <button onclick="location.href='/jcmanager/clients'">Client Management</button>
+        <button onclick="location.href='/jcmanager/clients/edit'">Create New Client</button>
+        <button >Site Management</button>
     </div>
-    <div>
+    <div class="menuSegment">
         Jobs <br/>
-        <a href="/jcmanager/jobs"><div>Create</div></a>
-        <a href="/jcmanager/jobs"><div>View/Edit</div></a>
+        <button onclick="location.href='/jcmanager/jobs'">Job Management</button>
+        <button>View/Edit</button>
     </div>
-    <div>
+    <div class="menuSegment">
         Job Cards <br/>
-        <a href="/jcmanager/jobcards"><div>Create</div></a>
-        <a href="/jcmanager/jobcards"><div>View/Edit</div></a>
+        <button >Create</button>
+        <button >View/Edit</button>
     </div>
-    <div>
+    <div class="menuSegment">
         User Profile <br/>
-        <a href="/jcmanager/user"><div>Edit Profile</div></a>
-        <a href="/jcmanager/user"><div>Change Password</div></a>
+        <button >Edit Profile</button>
+        <button >Change Password</button>
     </div>
 </div>

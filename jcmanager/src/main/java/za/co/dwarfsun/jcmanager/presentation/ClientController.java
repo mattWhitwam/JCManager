@@ -25,12 +25,14 @@ public class ClientController {
     @RequestMapping(value="clients/edit")
     public String editClients(Model model,
             @RequestParam(value="clientId", required=false, defaultValue = "") Long clientId, 
-            @RequestParam(value="clientName", required=false, defaultValue = "") String clientName
+            @RequestParam(value="clientName", required=false) String clientName
             ){
         
-        //model.addAttribute("clientID", (clientId < 0) ? "" : clientId);
-        model.addAttribute("clientID", clientId);
+        //model.addAttribute("clientID", (clientId != null) ? clientId : null);
+        model.addAttribute("clientId", clientId);
         model.addAttribute("clientName", clientName);
+        
+        
         return "clientEdit";
     }
     

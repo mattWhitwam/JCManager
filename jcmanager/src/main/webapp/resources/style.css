@@ -25,6 +25,7 @@ h1 {
 form {
     
 }
+
 .usableArea {
     margin-top: 4.5em;
     margin-left: 10em;
@@ -52,29 +53,71 @@ form {
     bottom: 0;
     width: 10em;
 }
-.sitemainmenu a {
-    text-decoration: none;
-    color: ghostwhite;
+
+.menuSegment {
+    border-width: 0;
+    border-style: none;
+    margin: 0em;
+    padding: 0em;
+    margin-top: 0.5em;
+    padding-top: 0.25em;
+    border-top-style: dotted;
+    border-top-width: 1px;
+    border-top-left-radius: 0;
 }
-.sitemainmenu a div {
+.menuSegment div {
     border-style: solid;
     border-color: ghostwhite;
     border-width: 1px;
-    border-top-left-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
     margin-left: 0.25em;
     margin-right: 0.25em;
     margin-bottom: 1px;
     padding-left: 0.25em;
     width: calc(100% - 0.75em);
 }
-.sitemainmenu a div:hover {
+.menuSegment div:first-of-type{
+    border-top-left-radius: 0.5em; 
+}
+.menuSegment div:last-of-type {
+    border-bottom-left-radius: 0.5em;
+}
+.menuSegment div:hover{
     background: lightgray;
     border-color: darkgray;
     color: black;
     padding-left: 0.5em;
     margin-left: 0em;
     width: calc(100% - 0.75em);
+    cursor: pointer;
+}
+
+.menuSegment button {
+    background: none;
+    border-style: solid;
+    border-color: ghostwhite;
+    border-width: 1px;
+    color: ghostwhite;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    margin-bottom: 1px;
+    padding-left: 0.25em;
+    text-align: left;
+    width: calc(100% - 0.5em);
+}
+.menuSegment button:first-of-type{
+    border-top-left-radius: 0.5em; 
+}
+.menuSegment button:last-of-type {
+    border-bottom-left-radius: 0.5em;
+}
+.menuSegment button:hover{
+    background: lightgray;
+    border-color: darkgray;
+    color: black;
+    padding-left: 0.5em;
+    margin-left: 0em;
+    width: calc(100% - 0.25em);
+    
 }
 
 #clientEdit {
