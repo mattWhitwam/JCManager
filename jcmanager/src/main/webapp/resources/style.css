@@ -22,8 +22,11 @@ h1 {
     font-variant: small-caps;
 }
 
+form {
+    
+}
 .usableArea {
-    margin-top: 4em;
+    margin-top: 4.5em;
     margin-left: 10em;
 }
 
@@ -39,13 +42,8 @@ h1 {
     right: 0;
     bottom: calc(100% - 4em);
 }
-#siteheaderspace {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    height: 5em;
-}
 
-#sitemainmenu {
+.sitemainmenu {
     background: black;
     color: ghostwhite;
     position: fixed;
@@ -54,22 +52,45 @@ h1 {
     bottom: 0;
     width: 10em;
 }
-#sitemainmenu a {
+.sitemainmenu a {
     text-decoration: none;
     color: ghostwhite;
 }
-#sitemainmenu a div {
+.sitemainmenu a div {
     border-style: solid;
     border-color: ghostwhite;
     border-width: 1px;
-    border-radius: 0.5em 0 0 0.5em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
     margin-left: 0.25em;
     margin-right: 0.25em;
     margin-bottom: 1px;
     padding-left: 0.25em;
     width: calc(100% - 0.75em);
 }
-#sitemainmenu a div:hover {
-    background: darkgrey;
-    border-color: lightgray;
+.sitemainmenu a div:hover {
+    background: lightgray;
+    border-color: darkgray;
+    color: black;
+    padding-left: 0.5em;
+    margin-left: 0em;
+    width: calc(100% - 0.75em);
+}
+
+#clientEdit {
+    max-width: 25em;
+    min-width: 10em;
+    text-align: right;
+}
+
+input {
+    padding: 0.25em;
+    -webkit-appearance: none; 
+    border: 1px solid darkgray;
+}
+input:read-only {
+    background: lightgray;
+    border: lightgray;
+    font-weight: bold;
+    
 }

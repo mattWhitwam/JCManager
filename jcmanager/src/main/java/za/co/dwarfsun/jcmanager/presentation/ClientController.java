@@ -8,7 +8,8 @@ package za.co.dwarfsun.jcmanager.presentation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMethod;
+//import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 /**
  *
  * @author Matt
@@ -19,6 +20,18 @@ public class ClientController {
     @RequestMapping(value="clients")
     public String clients(){
         return "clients";
+    }
+    
+    @RequestMapping(value="clients/edit")
+    public String editClients(Model model,
+            @RequestParam(value="clientId", required=false, defaultValue = "") Long clientId, 
+            @RequestParam(value="clientName", required=false, defaultValue = "") String clientName
+            ){
+        
+        //model.addAttribute("clientID", (clientId < 0) ? "" : clientId);
+        model.addAttribute("clientID", clientId);
+        model.addAttribute("clientName", clientName);
+        return "clientEdit";
     }
     
 }
