@@ -104,19 +104,31 @@ form {
     width: calc(100% - 0.25em);
 }
 
-#clientEdit {
+.editForm {
     max-width: 25em;
     min-width: 10em;
     text-align: right;
 }
+.editForm input {
+    width: 10em;
+}
 
 input {
+    font-size: medium;
     padding: 0.25em;
     -webkit-appearance: none; 
     border: 1px solid darkgray;
 }
+
 input:read-only {
     background: lightgray;
-    border: lightgray;
+    border: 1px solid lightgray;
     font-weight: bold;
+}
+
+.listed {
+    font-size: small;
+    max-width: 50em;
+    min-width: 10em;
+    text-align: left;    
 }

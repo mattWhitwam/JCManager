@@ -6,6 +6,8 @@
 
 package za.co.dwarfsun.jcmanager.domain;
 
+
+
 /**
  *
  * @author Connie

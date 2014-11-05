@@ -8,8 +8,8 @@
         Clients <br/>
         <button onclick="location.href='/jcmanager/clients'">Client Management</button>
         <button onclick="location.href='/jcmanager/clients/edit'">Create New</button>
-        <button onclick="location.href='/jcmanager/'">Contacts</button>
-        <button onclick="location.href='/jcmanager/sites'">Sites</button>
+        <!--button onclick="location.href='/jcmanager/'">Contacts</button-->
+        <!--button onclick="location.href='/jcmanager/sites'">Sites</button>-->
     </div>
     <div class="menuSegment">
         Jobs <br/>
