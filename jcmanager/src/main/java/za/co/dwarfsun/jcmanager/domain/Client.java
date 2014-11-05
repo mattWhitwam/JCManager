@@ -28,7 +28,7 @@ public class Client implements Serializable {
     private Long id;
     private String name;
     
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER )
     @JoinColumn(name="ClientId")
     private List<ContactPerson> contactPersons;
     
@@ -100,6 +100,10 @@ public class Client implements Serializable {
     public List<ContactPerson> getContactPersons() {
         return contactPersons;
     }
+    
+    public void addContactPerson(ContactPerson contactPerson) {
+        this.contactPersons.add(contactPerson);
+    }
 
     public void setContactPersons(List<ContactPerson> contactPersons) {
         this.contactPersons = contactPersons;
@@ -107,6 +111,10 @@ public class Client implements Serializable {
 
     public List<Site> getSites() {
         return sites;
+    }
+    
+    public void addSite(Site site){
+        this.sites.add(site);
     }
 
     public void setSites(List<Site> sites) {

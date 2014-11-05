@@ -65,9 +65,7 @@ public class ContactPersonController {
                     .build();
             contactService.persist(contact);
             Client client = clientService.find(clientId);
-            List<ContactPerson> contacts = client.getContactPersons();
-            contacts.add(contact);
-            client.setContactPersons(contacts);
+            client.addContactPerson(contact);
             clientService.merge(client);
         }
         return "index";

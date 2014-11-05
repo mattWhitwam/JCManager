@@ -42,7 +42,7 @@
             <%
                 List<Site> sites = (List<Site>)request.getAttribute("sites");
                 if (sites!=null) {
-                    out.println(sites.size());
+                    //out.println(sites.size());
                     for (Site s : sites) {
                         %>
             <form action="/jcmanager/sites/details" method="POST" class="listed">
@@ -64,11 +64,10 @@
                     <input type="submit" value="Add New"/>
                 </c:if>
             </form>
-            b4: ${contactsNum} <br/>
             <%
                 List<ContactPerson> contacts = (List<ContactPerson>)request.getAttribute("contacts");
                 if (contacts!=null) {
-                    out.println(contacts.size());
+                    //out.println(contacts.size());
                     for (ContactPerson p : contacts) {
                         %>
             <form action="/jcmanager/contacts/details" method="POST" class="listed">

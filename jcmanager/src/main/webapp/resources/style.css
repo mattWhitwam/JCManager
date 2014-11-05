@@ -63,6 +63,11 @@ form {
     border-top-style: dotted;
     border-top-width: 1px;
     border-top-left-radius: 0;
+    //height: 1em;
+    //overflow: hidden;
+}
+.menuSegment:hover {
+//    height: auto;
 }
 
 #circlebutton {

@@ -21,12 +21,12 @@
         <%@include file="/resources/includes/headerbar.html" %>
         <%@include file="/WEB-INF/jspf/mainMenu.jspf" %>
         <div class="usableArea">
-            You have ${numClients} clients.
+            <h2>Clients</h2>
 
             <%
                 List<Client> clients = (List<Client>)request.getAttribute("clients");
                 if (clients!=null) {
-                    out.println(clients.size());
+                    //out.println(clients.size());
                     for (Client c : clients) {
                         %>            
             <form action="/jcmanager/clients/edit" method="POST" class="listed">

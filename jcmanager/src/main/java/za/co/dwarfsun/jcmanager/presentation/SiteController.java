@@ -68,9 +68,7 @@ public class SiteController {
                     .build();
             siteService.persist(site);
             Client client = clientService.find(clientId);
-            List<Site> sites = client.getSites();
-            sites.add(site);
-            client.setSites(sites);
+            client.addSite(site);
             clientService.merge(client);
         }
         model.addAttribute("clientId", clientId);

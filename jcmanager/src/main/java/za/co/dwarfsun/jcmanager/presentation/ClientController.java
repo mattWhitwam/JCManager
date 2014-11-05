@@ -76,6 +76,9 @@ public class ClientController {
         }
         else {
             Client client = clientService.find(clientId);
+            model.addAttribute("sites", client.getSites());
+            model.addAttribute("contacts", client.getContactPersons());
+            
             if (clientName != null && !clientName.isEmpty()) {
                 client.setName(clientName);
             }
@@ -84,8 +87,7 @@ public class ClientController {
             }
             clientService.merge(client);
             
-            model.addAttribute("sites", client.getSites());
-            model.addAttribute("contacts", client.getContactPersons());
+            
         }
         model.addAttribute("clientId", clientId);
         model.addAttribute("clientName", clientName);
