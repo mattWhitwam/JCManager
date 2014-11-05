@@ -12,9 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
 import za.co.dwarfsun.jcmanager.domain.Client;
-import za.co.dwarfsun.jcmanager.domain.Site;
 import za.co.dwarfsun.jcmanager.services.ClientService;
-import za.co.dwarfsun.jcmanager.services.SiteService;
+
 /**
  *
  * @author Matt
@@ -23,8 +22,6 @@ import za.co.dwarfsun.jcmanager.services.SiteService;
 public class ClientController {
     @Autowired
     private ClientService clientService;
-    @Autowired
-    private SiteService siteService;
     
     @RequestMapping(value="clients")
     public String clients(Model model){
