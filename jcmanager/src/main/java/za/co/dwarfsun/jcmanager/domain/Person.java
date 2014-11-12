@@ -6,13 +6,15 @@
 
 package za.co.dwarfsun.jcmanager.domain;
 
+import java.io.Serializable;
+
 
 
 /**
  *
  * @author Connie
  */
-public abstract class Person {
+public abstract class Person implements Serializable {
     private String title;
     private String firstname;
     private String lastname;
