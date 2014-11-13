@@ -9,6 +9,7 @@ package za.co.dwarfsun.jcmanager.domain;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ public class Site implements Serializable {
     private String name;
     private String address;
     
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name="jobId")
     private List<JobInfo> job;
 

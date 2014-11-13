@@ -5,18 +5,26 @@
  */
 package za.co.dwarfsun.jcmanager.presentation.rest;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import za.co.dwarfsun.jcmanager.domain.Client;
+import za.co.dwarfsun.jcmanager.services.ClientService;
 /**
  *
  * @author Matthew
  */
 @RestController
+@RequestMapping(value = "api/demo")
 public class ARestDemoController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
+    @Autowired
+    ClientService clientService;
+    
 
     public class HelloWorld {
         private final long id;
@@ -31,6 +39,11 @@ public class ARestDemoController {
         public String getContent(){
             return content;
         }
+    }
+    
+    @RequestMapping(value="/clients")
+    public List<Client> clients() {
+        return clientService.findAll();
     }
     
     @RequestMapping(value="/helloworld")
