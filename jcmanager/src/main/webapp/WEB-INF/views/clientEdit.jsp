@@ -3,13 +3,12 @@
     Created on : 02 Nov 2014, 4:23:47 PM
     Author     : Matt
 --%>
-
-<%@page import="za.co.dwarfsun.jcmanager.domain.Client"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="za.co.dwarfsun.jcmanager.domain.Site"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
+<%@page import="za.co.dwarfsun.jcmanager.domain.Client"%>
+<%@page import="za.co.dwarfsun.jcmanager.domain.Site"%>
 <%@page import="za.co.dwarfsun.jcmanager.domain.ContactPerson"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -29,7 +28,6 @@
         <div class="usableArea">
             <h2> Client Details </h2>
             <form class="editForm" action="edit" method="POST">
-
                 Client ID: <input readonly type="text" name="clientId" value="<% out.print(client.getId()); %>"/><br/>
                 Client Name: <input type ="text" name="clientName" value="<% out.print(client.getName()); %>"/><br/>
                 <br/>

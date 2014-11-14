@@ -37,8 +37,7 @@ public class ContactPersonController {
         model.addAttribute("clientId", clientId);
         if (contactId != null) {
             ContactPerson contact = contactService.find(contactId);
-            model.addAttribute("contactId", contact.getId());
-            model.addAttribute("contactDescription", contact.getDescription());
+            model.addAttribute("contact", contact);
         }
         return "contactEdit";
     }
@@ -52,9 +51,9 @@ public class ContactPersonController {
         if (contactId != null) {
             ContactPerson contact = contactService.find(contactId);
             contact.setDescription(contactDescription);
+            /*
             contact.setFirstname(null);
             contact.setLastname(null);
-            /*
             contact.setTitle(null);
             contact.setEmail(null);
             contact.setPhone(null);
